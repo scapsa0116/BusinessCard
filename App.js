@@ -1,13 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import {
-	// other imports
-  ScrollView,
-} from 'react-native';
+import {ScrollView} from 'react-native';
+import { FontAwesome6 } from '@expo/vector-icons';
 
 export default function App() {
   return (
-    <ScrollView>
+   
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
     <View style={styles.container}>
       
       <Image
@@ -27,10 +26,7 @@ export default function App() {
       />
       <Text style={{fontSize:30, fontWeight: 'bold'}}> Stela Capsa</Text>
       <Text style={{ fontSize: 30, fontWeight: 'bold' }}>Web Developer</Text>
-      <StatusBar style="auto" />
-    </View>
-    
-    <Text style={{ padding: 10, fontSize: 16, lineHeight: 20 }}>
+      <Text style={{ padding: 10, fontSize: 16, lineHeight: 20 }}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam
     aliquam sem et tortor consequat id porta nibh. Pellentesque nec
@@ -54,9 +50,11 @@ export default function App() {
     neque viverra justo. Malesuada pellentesque elit eget gravida.
     Vitae nunc sed velit dignissim sodales ut eu sem integer.
   </Text>
-  </ScrollView>
+      <StatusBar style="auto" />
+       </View>
+    </ScrollView>
     
-    )}
+)}
 
     
 
