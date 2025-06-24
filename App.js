@@ -1,31 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, Linking, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, Linking } from 'react-native';
 import {ScrollView} from 'react-native';
 import { FontAwesome6 } from '@expo/vector-icons';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+
 
 export default function App() {
 
   const onContactMe = () => {
 
     Linking.openURL('stela.capsa@gmail.com')
+
+
+return (
+    <SafeAreaProvider>
+      <SafeAreaView edges={['bottom']}>
+        <View style = {{backgroundColor:'red'}}>
+          <View style = {{backgroundColor: 'paleogreen'}}>
+          <Text>Title</Text>
+          <Text>Footer</Text>
+          </View>
+        </View>
+			</SafeAreaView>
+    </SafeAreaProvider>
+  )
+
   }
 
 
 
-  return (
-
-    <SafeAreaView>
-
-    <view style = {{backgroundColor: 'palegreen', height:'100%', alignItems: 'center'}}>
-      <text>
-        Title
-      </text>
-      <text style ={{marginTop:'auto'}}>
-        Footer
-      </text>
-    </view>
-    </SafeAreaView>
-  )
+  
    
 //     <ScrollView>
 //     <View style={styles.container}>
@@ -96,12 +100,12 @@ export default function App() {
 
   
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: "white",
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
 
