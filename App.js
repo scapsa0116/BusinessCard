@@ -9,25 +9,20 @@ export default function App() {
 
   const onContactMe = () => {
 
-    Linking.openURL('stela.capsa@gmail.com')
-
+    Linking.openURL('stela.capsa@gmail.com')}
 
 return (
     <SafeAreaProvider>
-      <SafeAreaView edges={['bottom']}>
-        <View style = {{backgroundColor:'red'}}>
-          <View style = {{backgroundColor: 'paleogreen'}}>
-          <Text>Title</Text>
-          <Text>Footer</Text>
-          </View>
+      <SafeAreaView edges={['top' ]} style = {{backgroundColor: 'red'}}>
+        <View style = {{backgroundColor:'palegreen', height: '100%', alignItems: 'center'}}>
+          
+          <Text style={{fontSize:100}}>Title</Text>
+          <Text style={{marginTop:'auto'}}>Footer</Text>
+          
         </View>
 			</SafeAreaView>
     </SafeAreaProvider>
   )
-
-  }
-
-
 
   
    
