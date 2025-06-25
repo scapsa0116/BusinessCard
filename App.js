@@ -1,19 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, Linking, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, Linking, ScrollView} from 'react-native';
 import { FontAwesome6 } from '@expo/vector-icons';
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import ProjectCard from './ProjectCards';
 
 
-function ProjectCard (props){
-  console.log(props)
-  return(
-    <View>
-        <Image source = {require ('./assets/stela.jpeg')} style = {{height: 150, aspectRatio: 16/9, borderRadius: 10}}/>
-        <Text style = {{ fontWeight: 'bold', color: 'dimgray',fontSize: 20, marginTop: 10,}}>{props.name}</Text>
-      </View>
-
-  )
-}
 
 export default function App() {
   const name = 'Stela Capsa';
@@ -77,7 +68,7 @@ return (
       
       
       <Text style={{fontSize:30, fontWeight: 'bold'}}>{name}</Text>
-      <Text style={{ fontSize: 30, fontWeight: 'bold' }}>{getOccupation}</Text>
+      <Text style={{ fontSize: 30, fontWeight: 'bold' }}>{getOccupation()}</Text>
       {renderIcons()}
       
 
@@ -91,15 +82,23 @@ return (
          nam aliquam sem. Placerat duis ultricies lacus sed. 
       </Text>
 
-      <Text style = {{fontWeight: 'bold', fontSize: 18, marginTop: 20}}>Project name</Text>
+      <Text style = {{fontWeight: 'bold', fontSize: 18, marginTop: 20}}>Projects</Text>
       
-      <ScrollView horizontal showsHorizontalScrollIndicator = {false} contentContainerStyle = {{gap: 10, padding: 10}}>
-        <ProjectCard name = "Apple"/>
-        <ProjectCard name = "Torro"/>
+      <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{ gap: 10, padding: 10 }}
+            >
+              <ProjectCard
+                name="Apple Cards"
+                image={require('./assets/project1.jpeg')}
+              />
+              <ProjectCard
+                name="Trello"
+                image={require('./assets/project2.jpeg')}
+                />
       </ScrollView>
-      
-      
-      </View>
+     </View>
        <StatusBar style='light' />
     </ScrollView>
     </SafeAreaView>
