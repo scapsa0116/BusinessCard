@@ -4,6 +4,17 @@ import { FontAwesome6 } from '@expo/vector-icons';
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 
+function ProjectCard (props){
+  console.log(props)
+  return(
+    <View>
+        <Image source = {require ('./assets/stela.jpeg')} style = {{height: 150, aspectRatio: 16/9, borderRadius: 10}}/>
+        <Text style = {{ fontWeight: 'bold', color: 'dimgray',fontSize: 20, marginTop: 10,}}>{props.name}</Text>
+      </View>
+
+  )
+}
+
 export default function App() {
   const name = 'Stela Capsa';
   
@@ -74,29 +85,20 @@ return (
 
 
       <Text style={{ padding: 10, fontSize: 16, lineHeight: 20 }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam
-    aliquam sem et tortor consequat id porta nibh. Pellentesque nec
-    nam aliquam sem. Placerat duis ultricies lacus sed. Non curabitur
-    gravida arcu ac tortor dignissim convallis aenean. Amet nisl purus
-    in mollis nunc. Vel elit scelerisque mauris pellentesque pulvinar
-    pellentesque. Sagittis orci a scelerisque purus semper eget duis
-    at tellus. Sed libero enim sed faucibus turpis in eu mi bibendum.
-    Duis at consectetur lorem donec massa sapien faucibus et molestie.
-    At ultrices mi tempus imperdiet nulla malesuada pellentesque elit
-    eget. Purus sit amet volutpat consequat mauris nunc congue nisi
-    vitae. Urna condimentum mattis pellentesque id nibh tortor id.
-    Consequat id porta nibh venenatis. Lectus vestibulum mattis
-    ullamcorper velit sed ullamcorper. Mauris a diam maecenas sed enim
-    ut sem. Volutpat commodo sed egestas egestas fringilla phasellus.
-    Turpis egestas integer eget aliquet nibh praesent tristique magna
-    sit. Congue mauris rhoncus aenean vel elit scelerisque. Tellus
-    integer feugiat scelerisque varius morbi enim. Consectetur a erat
-    nam at. Bibendum arcu vitae elementum curabitur vitae nunc. Sit
-    amet consectetur adipiscing elit. Rhoncus mattis rhoncus urna
-    neque viverra justo. Malesuada pellentesque elit eget gravida.
-    Vitae nunc sed velit dignissim sodales ut eu sem integer.
-  </Text>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+         eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam
+         aliquam sem et tortor consequat id porta nibh. Pellentesque nec
+         nam aliquam sem. Placerat duis ultricies lacus sed. 
+      </Text>
+
+      <Text style = {{fontWeight: 'bold', fontSize: 18, marginTop: 20}}>Project name</Text>
+      
+      <ScrollView horizontal showsHorizontalScrollIndicator = {false} contentContainerStyle = {{gap: 10, padding: 10}}>
+        <ProjectCard name = "Apple"/>
+        <ProjectCard name = "Torro"/>
+      </ScrollView>
+      
+      
       </View>
        <StatusBar style='light' />
     </ScrollView>
